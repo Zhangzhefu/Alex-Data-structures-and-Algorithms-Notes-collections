@@ -1,0 +1,33 @@
+Manhattan distance is a metric used to determine the distance between two points in a grid-like path.
+Unlike Euclidean distance, which measures the shortest possible line between two points,
+Manhattan distance measures the sum of the absolute differences between the coordinates of the points. This method is called "Manhattan distance" because, like a taxi driving through the grid-like streets of Manhattan, it must travel along the grid lines.
+
+Mathematically, the Manhattan distance between two points in an n-dimensional space is the
+sum of the absolute differences of their Cartesian coordinates.
+
+2D example
+Consider two points: A(1, 1) and B(4, 5):
+
+Calculate |x₁ - x₂| = |1 - 4| = 3
+Calculate |y₁ - y₂| = |1 - 5| = 4
+Sum the results: 3 + 4 = 7
+
+------------------------
+
+3D example
+Now, let's consider two points in 3D space: A(1, 2, 3) and B(4, 5, 6):
+
+Calculate |x₁ - x₂| = |1 - 4| = 3
+Calculate |y₁ - y₂| = |2 - 5| = 3
+Calculate |z₁ - z₂| = |3 - 6| = 3
+Sum the results: 3 + 3 + 3 = 9
+
+------------------------
+
+Comparison with Euclidean distance
+While Manhattan distance measures the path along grid lines, Euclidean distance measures the straight-line distance between two points or, "as the crow flies," as they say.
+
+For our 2D example:
+
+Manhattan distance: 7 units
+Euclidean distance: √((1-4)² + (1-5)²) = 5 units

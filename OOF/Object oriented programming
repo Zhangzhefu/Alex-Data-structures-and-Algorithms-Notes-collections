@@ -1,0 +1,21 @@
+We discussed the four pillars of object-oriented programming as they apply to the Python programming language.
+
+Inheritance
+Python allows classes to inherit on multiple levels. Meaning a class can inherit from a base class as well as a derived class. Python also supports multiple inheritance, where one class can inherit from any number of other classes. This allows us to describe complex relationships between objects with minimal repeated code.
+
+Polymorphism
+Polymorphism is a concept that allows functions and objects to behave in different ways depending on context. There is the polymorphism of functions like len() or the addition operator +, which can act differently depending on the provided data.
+
+Abstraction
+Python supports the concept of abstraction by allowing objects with methods that have the same name, to be called in a general manner. Further, Python provides the Abstract Base Class (ABC) for us to create a more clearly defined interface.
+
+Encapsulation
+Python’s approach to encapsulation is unique compared to most other object-oriented programming languages. In Python, all members of an object are publicly accessible but there are conventions to indicate to developers that a member is intended to be protected or private.
+
+In this lesson, we learned more complicated relationships between classes. We learned:
+
+How to create a subclass of an existing class.
+How to redefine existing methods of a parent class in a subclass by overriding them.
+How to leverage a parent class’s methods in the body of a subclass method using the super() function.
+How to write programs that are flexible using interfaces and polymorphism.
+How to write data types that look and feel like native data types with dunder methods.

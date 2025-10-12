@@ -1,0 +1,117 @@
+Classes in object-oriented programming are all about grouping data and behavior together in one place:
+an object. Object-oriented programmers tend to think about programming as a modeling problem.
+
+To provide some contrast,
+functional programmers tend to think of their code as inputs and outputs,
+and how those inputs and outputs transition the world from one state to the next:
+
+
+OOP isn't the only pattern for organizing code, but it's one of the more popular ones.
+If you understand multiple ways of thinking about code, you'll be a much better developer overall
+
+
+Abstraction is about creating a simple interface for complex behavior.
+    It focuses on what's exposed.
+Encapsulation is about hiding internal state.
+    It focuses on tucking implementation details away so no one depends on them.
+
+Abstraction is more about reducing complexity, encapsulation is more about maintaining the integrity of system internals.
+
+
+To call a function within a class, we use self to refer to that function instead directly the function name.
+    instead of callme()     it would be self.callme()
+
+Using underscores in front of a variable or function naming makes the code more organized and tells other programmer to not touch on certain things.
+
+
+Inheritance allows one class, the "child" class, to inherit the properties and methods of another class, the "parent" class.
+
+The Cow class can reuse the Animal class's constructor with the super() method,
+super() allows the child class to call methods and constructors from its parent class, in this case, __init__():
+Example:
+
+class Animal:
+    # parent "Animal" class
+    def __init__(self, num_legs):
+        self.num_legs = num_legs
+
+class Cow(Animal):
+    # child class "Cow" inherits "Animal"
+    def __init__(self, num_udders):
+            # call the parent constructor to give the cow some legs
+            super().__init__(4)
+
+            # set cow specific properties
+            self.num_udders = num_udders
+
+
+There are not limit to how deeply we can nest an inheritance tree.
+One class can inherit from another class that inherits from another class.
+
+A good child class is a strict subset of its parent class.
+
+An example of this is with private properties. A child class cannot simply access a private property of its parent class.
+ t has to use a getter. For example:
+
+class Wall:
+    def __init__(self, height):
+        self.__height = height
+
+    def get_height(self):
+        return self.__height
+
+class Castle(Wall):
+    def __init__(self, height, towers):
+        super().__init__(height)
+        self.towers = towers
+
+    def get_tower_height(self):
+        return self.get_height() * 2
+
+
+While inheritance is the most unique trait of object-oriented languages,
+polymorphism is probably the most powerful. Polymorphism is the ability of a variable, function or object to take on multiple forms.
+
+"poly"="many"
+"morph"="form"
+For example, classes in the same hierarchical tree may have methods with the same name but different behaviors.
+
+class Creature():
+    def move(self):
+        print("the creature moves")
+
+class Dragon(Creature):
+    def move(self):
+        print("the dragon flies")
+
+class Kraken(Creature):
+    def move(self):
+        print("the kraken swims")
+
+for creature in [Creature(), Dragon(), Kraken()]:
+    creature.move()
+# prints:
+# the creature moves
+# the dragon flies
+# the kraken swims
+
+Polymorphism in programming is the ability to present the same interface (function or method signatures) for many different underlying forms (data types).
+
+Another kind of built-in polymorphism in Python is the ability to override how an operator works.
+For example, the + operator works for built-in types like integers and strings.
+
+Operations          Operator    Method
+
+Addition	            +	    __add__
+Subtraction	            -	    __sub__
+Multiplication	        *	    __mul__
+Power	                **	    __pow__
+Division	            /	    __truediv__
+Floor Division	        //	    __floordiv__
+Remainder (modulo)	    %	    __mod__
+Bitwise Left Shift	    <<	    __lshift__
+Bitwise Right Shift	    >>	    __rshift__
+Bitwise                 AND	&	__and__
+Bitwise                 OR	|	__or__
+Bitwise                 XOR	^	__xor__
+Bitwise                 NOT	~	__invert__
